@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "rank": 1,
+    "is_active": true
+  },
+  {
+    "id": 2,
+    "name": "Ethereum",
+    "symbol": "ETH",
+    "rank": 2,
+    "is_active": true
+  },
+  {
+    "id": 3,
+    "name": "Ripple",
+    "symbol": "XRP",
+    "rank": 3,
+    "is_active": true
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "crypto_name": "Bitcoin",
+    "added_date": "2025-10-14"
+  },
+  {
+    "id": 2,
+    "crypto_name": "Ethereum",
+    "added_date": "2025-10-14"
+  }
+]
