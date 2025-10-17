@@ -1,47 +1,35 @@
 const express = require('express');
-
 const app = express();
 const PORT = 3000;
+const cryptoRoutes = require('./modules/crypto/routes/cryptoRoutes');
+const dailyPriceRoutes = require('./modules/dailyPrice/routes/dailyPriceRoutes');
+const watchlistRoutes = require('./modules/watchlist/routes/watchlistRoutes');
+
+
+
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
-//Get all crypto prices
-app.get('/crypto', (req, res) => {
-  res.json({ message: 'Get all cryptocurrencies - dummy' });
-});
 
-app.get('/crypto/search/:name', (req, res) => {
-  res.json({ message: 'Search cryptocurrency by name - dummy response' });
-});
-
-app.get('/crypto/:name/history', (req, res) => {
-  res.json({ message: 'get price history' });
-});
+app.use('/crypto', cryptoRoutes);
+app.use('/prices', dailyPriceRoutes);  
+app.use('/watchlist', watchlistRoutes);
 
 
-app.get('/crypto/:name/daily', (req, res) => {
- res.json({ message: 'get daily price'})
-})
 
-//post stuff
-
-app.post('/crypto', (req, res) => {
-    res.json({ message: 'Add a new crypto'})
+app.use((req, res) => {
+  res.status(404).json({ message: 'Route not found' });
 });
 
 
-//put stuff
+app.use((err, req, res, next) => {
+  console.error(err.message);
+  res.status(500).json({ message: 'Server error' });
+});
 
-app.put('/crypto/:name', (req, res) => {
-    res.json({ message: 'update a crypto'})
-})
 
-//Delete
-
-app.delete('/crypto/:name', (req, res) => {
-    res.json({ message: 'Deleted crypto'})
-})
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
