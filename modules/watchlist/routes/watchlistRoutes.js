@@ -9,14 +9,46 @@ const { validatorAddToWatchlist, handleValidation } = require('../middlewares/wa
 router3.get('/', async (req, res, next) => {
 
   try {
-    const watchlist = await watchlistModel.fetchWatchlist();
-    res.status(200).json(watchlist);
+    let search = req.query.search || "";
+
+   
+    const count = await watchlistModel.WatchModeler.countDocuments({
+      crypto_name: search
+    });
+
+    if (!count || count <= 0) {
+      return res.send({ count: 0, page: 1, data: [] });
+    }
+
+    const sort_by = req.query.sort_by || "added_date";
+    const sort_order = req.query.sort_order === "asc" ? 1 : -1;
+
+    const limit = parseInt(req.query.limit) || 10;
+    const page = parseInt(req.query.page) || 1;
+
+    
+
+    const watchlist = await watchlistModel.WatchModeler.find(
+      { crypto_name: search },
+      {},
+      {
+        limit,
+        skip: (page - 1) * limit,
+        sort: { [sort_by]: sort_order },
+      }
+    );
+
+    res.json({
+      count,
+      page,
+      limit,
+      data: watchlist,
+    });
 
   } catch (error) {
     next(error);
   }
-  }
-);
+});
 
 
 

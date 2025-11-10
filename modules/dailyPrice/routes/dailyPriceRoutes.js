@@ -9,8 +9,40 @@ const { validationCreateDaily, validationUpdateDaily, handleValidation } = requi
 router2.get('/', async (req, res, next) => {
   
   try {
-  const getDemPrices = await dailyPriceModel.crypTeckdailyPrices();
-    res.status(200).json(getDemPrices);
+      let search = req.query.search || "";
+
+      const count = await dailyPriceModel.PriceModeler.countDocuments({
+        crypto_name: search
+      })
+
+      if (!count || count <= 0) {
+        return res.send({ count: 0, page: 1, data: []})
+      }
+
+      const sort_by = req.query.sort_by || "date";
+    const sort_order = req.query.sort_order === "asc" ? 1 : -1;
+
+    
+    const limit = parseInt(req.query.limit) || 10;
+    const page = parseInt(req.query.page) || 1;
+
+    
+    const getDemPrices = await dailyPriceModel.DailyModel.find(
+      { crypto_name: search },
+      {},
+      {
+        limit,
+        skip: (page - 1) * limit,
+        sort: { [sort_by]: sort_order },
+      }
+    );
+
+    res.json({
+      count,
+      page,
+      limit,
+      data: getDemPrices,
+    });
 
   } catch (error) {
     next(error);

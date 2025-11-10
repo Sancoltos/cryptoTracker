@@ -1,16 +1,20 @@
+require("dotenv").config();
+
+
+
 const express = require('express');
 const app = express();
 const PORT = 3000;
 const cryptoRoutes = require('./modules/crypto/routes/cryptoRoutes');
 const dailyPriceRoutes = require('./modules/dailyPrice/routes/dailyPriceRoutes');
 const watchlistRoutes = require('./modules/watchlist/routes/watchlistRoutes');
-
+const connectDB = require('./shared/middlewares/connect-db');
 
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(connectDB);
 
 
 app.use('/crypto', cryptoRoutes);
