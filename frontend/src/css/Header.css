@@ -1,0 +1,34 @@
+header {
+  background-color: black;
+  color: white;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap:830px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  
+}
+
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.8rem
+
+}
+
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
