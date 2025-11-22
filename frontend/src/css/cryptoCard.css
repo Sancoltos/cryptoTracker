@@ -1,0 +1,46 @@
+.crypto-card {
+  background-color: #270f2a;
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+.market-overview {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.crypto-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.crypto-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.crypto-info .symbol {
+  color: #9ca3af;
+  margin: 2px 0;
+}
+
+.crypto-info .rank {
+  font-size: 0.85rem;
+}
+
+.crypto-info .status.active {
+  color: #10b981; 
+}
+
+.crypto-info .status.inactive {
+  color: #ef4444; 
+}

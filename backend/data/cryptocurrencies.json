@@ -19,5 +19,334 @@
     "symbol": "XRP",
     "rank": 3,
     "is_active": true
+  },
+  {
+    "id": 4,
+    "name": "Tether",
+    "symbol": "USDT",
+    "rank": 4,
+    "is_active": true
+  },
+  {
+    "id": 5,
+    "name": "Binance Coin",
+    "symbol": "BNB",
+    "rank": 5,
+    "is_active": true
+  },
+  {
+    "id": 6,
+    "name": "Solana",
+    "symbol": "SOL",
+    "rank": 6,
+    "is_active": true
+  },
+  {
+    "id": 7,
+    "name": "USD Coin",
+    "symbol": "USDC",
+    "rank": 7,
+    "is_active": true
+  },
+  {
+    "id": 8,
+    "name": "Dogecoin",
+    "symbol": "DOGE",
+    "rank": 8,
+    "is_active": true
+  },
+  {
+    "id": 9,
+    "name": "Cardano",
+    "symbol": "ADA",
+    "rank": 9,
+    "is_active": true
+  },
+  {
+    "id": 10,
+    "name": "TRON",
+    "symbol": "TRX",
+    "rank": 10,
+    "is_active": true
+  },
+  {
+    "id": 11,
+    "name": "Sui",
+    "symbol": "SUI",
+    "rank": 11,
+    "is_active": true
+  },
+  {
+    "id": 12,
+    "name": "Wrapped Bitcoin",
+    "symbol": "WBTC",
+    "rank": 12,
+    "is_active": true
+  },
+  {
+    "id": 13,
+    "name": "Chainlink",
+    "symbol": "LINK",
+    "rank": 13,
+    "is_active": true
+  },
+  {
+    "id": 14,
+    "name": "Avalanche",
+    "symbol": "AVAX",
+    "rank": 14,
+    "is_active": true
+  },
+  {
+    "id": 15,
+    "name": "Stellar",
+    "symbol": "XLM",
+    "rank": 15,
+    "is_active": true
+  },
+  {
+    "id": 16,
+    "name": "Shiba Inu",
+    "symbol": "SHIB",
+    "rank": 16,
+    "is_active": true
+  },
+  {
+    "id": 17,
+    "name": "Polygon",
+    "symbol": "MATIC",
+    "rank": 17,
+    "is_active": true
+  },
+  {
+    "id": 18,
+    "name": "Uniswap",
+    "symbol": "UNI",
+    "rank": 18,
+    "is_active": true
+  },
+  {
+    "id": 19,
+    "name": "Internet Computer",
+    "symbol": "ICP",
+    "rank": 19,
+    "is_active": true
+  },
+  {
+    "id": 20,
+    "name": "Litecoin",
+    "symbol": "LTC",
+    "rank": 20,
+    "is_active": true
+  },
+  {
+    "id": 21,
+    "name": "Algorand",
+    "symbol": "ALGO",
+    "rank": 21,
+    "is_active": true
+  },
+  {
+    "id": 22,
+    "name": "Aave",
+    "symbol": "AAVE",
+    "rank": 22,
+    "is_active": true
+  },
+  {
+    "id": 23,
+    "name": "Cosmos",
+    "symbol": "ATOM",
+    "rank": 23,
+    "is_active": true
+  },
+  {
+    "id": 24,
+    "name": "Fantom",
+    "symbol": "FTM",
+    "rank": 24,
+    "is_active": true
+  },
+  {
+    "id": 25,
+    "name": "Filecoin",
+    "symbol": "FIL",
+    "rank": 25,
+    "is_active": true
+  },
+  {
+    "id": 26,
+    "name": "Tezos",
+    "symbol": "XTZ",
+    "rank": 26,
+    "is_active": true
+  },
+  {
+    "id": 27,
+    "name": "NEAR Protocol",
+    "symbol": "NEAR",
+    "rank": 27,
+    "is_active": true
+  },
+  {
+    "id": 28,
+    "name": "Monero",
+    "symbol": "XMR",
+    "rank": 28,
+    "is_active": true
+  },
+  {
+    "id": 29,
+    "name": "Maker",
+    "symbol": "MKR",
+    "rank": 29,
+    "is_active": true
+  },
+  {
+    "id": 30,
+    "name": "Theta",
+    "symbol": "THETA",
+    "rank": 30,
+    "is_active": true
+  },
+  {
+    "id": 31,
+    "name": "VeChain",
+    "symbol": "VET",
+    "rank": 31,
+    "is_active": true
+  },
+  {
+    "id": 32,
+    "name": "Aptos",
+    "symbol": "APT",
+    "rank": 32,
+    "is_active": true
+  },
+  {
+    "id": 33,
+    "name": "Hedera",
+    "symbol": "HBAR",
+    "rank": 33,
+    "is_active": true
+  },
+  {
+    "id": 34,
+    "name": "Render",
+    "symbol": "RNDR",
+    "rank": 34,
+    "is_active": true
+  },
+  {
+    "id": 35,
+    "name": "Axie Infinity",
+    "symbol": "AXS",
+    "rank": 35,
+    "is_active": true
+  },
+  {
+    "id": 36,
+    "name": "Dash",
+    "symbol": "DASH",
+    "rank": 36,
+    "is_active": true
+  },
+  {
+    "id": 37,
+    "name": "Zcash",
+    "symbol": "ZEC",
+    "rank": 37,
+    "is_active": true
+  },
+  {
+    "id": 38,
+    "name": "Chiliz",
+    "symbol": "CHZ",
+    "rank": 38,
+    "is_active": true
+  },
+  {
+    "id": 39,
+    "name": "The Graph",
+    "symbol": "GRT",
+    "rank": 39,
+    "is_active": true
+  },
+  {
+    "id": 40,
+    "name": "Toncoin",
+    "symbol": "TON",
+    "rank": 40,
+    "is_active": true
+  },
+  {
+    "id": 41,
+    "name": "Optimism",
+    "symbol": "OP",
+    "rank": 41,
+    "is_active": true
+  },
+  {
+    "id": 42,
+    "name": "PancakeSwap",
+    "symbol": "CAKE",
+    "rank": 42,
+    "is_active": true
+  },
+  {
+    "id": 43,
+    "name": "Compound",
+    "symbol": "COMP",
+    "rank": 43,
+    "is_active": true
+  },
+  {
+    "id": 44,
+    "name": "Curve DAO Token",
+    "symbol": "CRV",
+    "rank": 44,
+    "is_active": true
+  },
+  {
+    "id": 45,
+    "name": "Gnosis",
+    "symbol": "GNO",
+    "rank": 45,
+    "is_active": true
+  },
+  {
+    "id": 46,
+    "name": "MakerDAO",
+    "symbol": "DAI",
+    "rank": 46,
+    "is_active": true
+  },
+  {
+    "id": 47,
+    "name": "Firo (formerly Zcoin)",
+    "symbol": "FIRO",
+    "rank": 47,
+    "is_active": true
+  },
+  {
+    "id": 48,
+    "name": "Kusama",
+    "symbol": "KSM",
+    "rank": 48,
+    "is_active": true
+  },
+  {
+    "id": 49,
+    "name": "Quant",
+    "symbol": "QNT",
+    "rank": 49,
+    "is_active": true
+  },
+  {
+    "id": 50,
+    "name": "Decred",
+    "symbol": "DCR",
+    "rank": 50,
+    "is_active": true
   }
 ]

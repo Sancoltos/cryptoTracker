@@ -12,11 +12,13 @@ bbRouter.get('/', async (req, res, next) => {
   try {
     let search = req.query.search || "";
 
-    const count = await cryptoModel.CryptoModel.countDocuments({
-      name: search
-    })
+    const filter = search.trim() !== "" 
+      ? { name: { $regex: search, $options: "i" } } 
+      : {};
 
-    if (!count || count <= 0) {
+    const count = await cryptoModel.CryptoModel.countDocuments(filter)
+
+    if (count === 0) {
       return res.send({ count: 0 , page:1, data: []});
     }
 
@@ -28,9 +30,7 @@ bbRouter.get('/', async (req, res, next) => {
     const page = parseInt(req.query.page) || 1;
 
 
-    const allCryptos = await cryptoModel.CryptoModel.find(
-      { name: search },
-      {},
+    const allCryptos = await cryptoModel.CryptoModel.find(filter, {},
       {
         limit,
         skip: (page - 1) * limit,
@@ -64,6 +64,15 @@ bbRouter.get('/search/:name', async (req, res, next) => {
       next(error);
   }
 
+});
+
+bbRouter.post('/bulk', async (req, res) => {
+  try {
+    const result = await cryptoModel.CryptoModel.insertMany(req.body);
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 

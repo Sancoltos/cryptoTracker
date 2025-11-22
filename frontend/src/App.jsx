@@ -1,7 +1,10 @@
 import { BrowserRouter, Routes, Route} from "react-router-dom";
-import { useState } from 'react'
-import './App.css'
+// import { useState } from 'react'
 import Header from "./components/Header";
+import TabNavigator from "./components/TabNavigator";
+
+
+
 
 function App() {
 
@@ -9,10 +12,7 @@ function App() {
   return (
   <BrowserRouter>
       <Header />
-      <Routes>
-        <Route/>
-        <Route/>
-      </Routes>
+      <TabNavigator />
 
 
     </BrowserRouter>

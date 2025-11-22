@@ -3,6 +3,7 @@ require("dotenv").config();
 
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const PORT = 3000;
 const cryptoRoutes = require('./modules/crypto/routes/cryptoRoutes');
@@ -15,7 +16,7 @@ const connectDB = require('./shared/middlewares/connect-db');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(connectDB);
-
+app.use(cors());
 
 app.use('/crypto', cryptoRoutes);
 app.use('/prices', dailyPriceRoutes);  
