@@ -1,8 +1,11 @@
 import { Search, TrendingUp } from 'lucide-react';
 import "../css/Header.css"
+import AddCrypto from './AddCrypto';
 
-export default function CryptoHeader() {
+export default function CryptoHeader({ onAddClick }) {
+   
   return (
+    
     <header>
       <div className="logo">
         <TrendingUp />
@@ -13,6 +16,7 @@ export default function CryptoHeader() {
         <Search />
         <input type="text" placeholder="Search cryptocurrencies..." />
       </div>
+      <button className='addButton' onClick={onAddClick}>Add Crypto</button>
     </header>
   );
 }

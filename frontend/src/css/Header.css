@@ -4,8 +4,8 @@ header {
   padding: 5px 20px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  gap:830px;
+  justify-content: space-between;
+  gap:0px;
   align-items: center;
   position: fixed;
   top: 0;
@@ -22,13 +22,27 @@ header {
   display: flex;
   align-items: center;
   gap: 20px;
-  font-size: 0.8rem
-
+  font-size: 0.8rem;
+  flex: 1; 
 }
-
 
 .search {
   display: flex;
-  align-items: center;
-  gap: 30px;
+  gap: 12px;
+  flex: 1;  
+  justify-content: flex-end; 
+  margin: 0;
+  padding-right: 30px;
+}
+
+.addButton {
+  background-color: #5c0f51;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;  
+  left: 50%;  
+  transform: translateX(-50%);  
 }

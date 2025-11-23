@@ -23,7 +23,7 @@ bbRouter.get('/', async (req, res, next) => {
     }
 
     const sort_by = req.query.sort_by || "rank";
-    const sort_order = req.query.sort_order === "asc" ? 1: -1;
+    const sort_order = req.query.sort_order === "asc" ? 1: 1;
 
 
     const limit = parseInt(req.query.limit) || 10;

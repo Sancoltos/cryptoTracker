@@ -35,7 +35,10 @@ if (error) {
     <div className="market-overview">
       {cryptos.map(dude => (
         <CryptoCard key={dude._id ?? dude.name} crypto={dude} />
+      
+        
       ))}
     </div>
+    
   );
 };
