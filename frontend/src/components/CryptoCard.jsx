@@ -15,7 +15,7 @@ const CryptoCard = ({ crypto } = {}) => {
 
   return (
     <div className="crypto-card">
-      <img src={`/path/to/icons/${crypto.symbol}.png`} alt={crypto.name} className="crypto-logo" />
+      <img src={`/assets/${crypto.symbol}.png`} alt={crypto.name} className="crypto-logo" />
 
       <div className="crypto-info">
         <h3>{crypto.name}</h3>
