@@ -10,6 +10,7 @@ const cryptoRoutes = require('./modules/crypto/routes/cryptoRoutes');
 const dailyPriceRoutes = require('./modules/dailyPrice/routes/dailyPriceRoutes');
 const watchlistRoutes = require('./modules/watchlist/routes/watchlistRoutes');
 const connectDB = require('./shared/middlewares/connect-db');
+const authRoutes = require('./modules/user/routes/authRoutes');
 
 
 
@@ -21,7 +22,7 @@ app.use(cors());
 app.use('/crypto', cryptoRoutes);
 app.use('/prices', dailyPriceRoutes);  
 app.use('/watchlist', watchlistRoutes);
-
+app.use('/auth', authRoutes);
 
 
 app.use((req, res) => {
