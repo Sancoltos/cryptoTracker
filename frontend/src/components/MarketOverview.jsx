@@ -10,7 +10,12 @@ export default function MarketOverview() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/crypto?limit=50&page=1')
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:3000/crypto?limit=50&page=1' ,{
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
       .then((res) => res.json())
       .then((data) => {
         setCryptos(data.data);

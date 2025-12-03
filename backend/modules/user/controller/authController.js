@@ -5,7 +5,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 
 
-const transporter = modemailer.createTransport({
+const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS}
 })
@@ -50,7 +50,7 @@ async function verifyOtp (req,res,next){
 
      const { email , otp } = req.body
 
-     const user = await User.findOne({ email })
+     const user = await CTUser.findOne({ email })
       if(!user || !user.otpCode || !user.otpExpiresAt){
         return res.status(400).json({message:'OTP not found. Please login again.'})
       }
@@ -81,7 +81,6 @@ async function verifyOtp (req,res,next){
 }
 
 module.exports = {
-   register,
    login,
       verifyOtp
 }

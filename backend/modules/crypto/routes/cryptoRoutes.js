@@ -2,7 +2,7 @@ const express = require('express');
 const bbRouter = express.Router();
 const cryptoModel = require('../models/cryptoModel');
 const { validationCreateCryptek, validationUpdateCryptek, adamsErrorHandler } = require('../middlewares/cryptoValidation');
-
+const { requireRole } = require('../../../shared/middlewares/auth');
 
 /*here we have all the rest api endpoints for the project
 if everything works ok we get a a 200 status code and for some
@@ -106,7 +106,7 @@ bbRouter.post('/', validationCreateCryptek, adamsErrorHandler, async (req, res, 
 
 
 
-bbRouter.put('/:name', validationUpdateCryptek, adamsErrorHandler, async (req, res, next) => {
+bbRouter.put('/:name', requireRole(['admin']), validationUpdateCryptek, adamsErrorHandler, async (req, res, next) => {
   try {
     const updated = await cryptoModel.updateCrypto(req.params.name, req.body);
     if (!updated) {

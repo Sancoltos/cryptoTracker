@@ -18,10 +18,10 @@ export default function AddCrypto({ onClose}) {
     setDisabled(true);
     const newCrypto = { name, symbol, rank, is_active };
 
-
+const token = localStorage.getItem('token');
     fetch('http://localhost:3000/crypto', {
       method: 'POST',
-      headers:{ "Content-Type" : "application/json"},
+      headers:{ "Content-Type" : "application/json", "Authorization": `Bearer ${token}` },
       body: JSON.stringify(newCrypto)
     })
     .then((res) => {

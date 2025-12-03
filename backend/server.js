@@ -11,7 +11,7 @@ const dailyPriceRoutes = require('./modules/dailyPrice/routes/dailyPriceRoutes')
 const watchlistRoutes = require('./modules/watchlist/routes/watchlistRoutes');
 const connectDB = require('./shared/middlewares/connect-db');
 const authRoutes = require('./modules/user/routes/authRoutes');
-
+const { requireAuth } = require('./shared/middlewares/auth');
 
 
 app.use(express.json());
@@ -19,9 +19,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(connectDB);
 app.use(cors());
 
-app.use('/crypto', cryptoRoutes);
-app.use('/prices', dailyPriceRoutes);  
-app.use('/watchlist', watchlistRoutes);
+app.use('/crypto', requireAuth, cryptoRoutes);
+app.use('/prices',requireAuth, dailyPriceRoutes);  
+app.use('/watchlist', requireAuth, watchlistRoutes);
 app.use('/auth', authRoutes);
 
 

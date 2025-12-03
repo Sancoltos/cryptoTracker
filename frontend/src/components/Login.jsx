@@ -1,22 +1,41 @@
-import { useState } from 'react';
+import { useState} from 'react'
 import '../css/Login.css';
 
-function Login({ onLogin }) {
-  const [username, setUsername] = useState('');
+
+function Login({onGoToOtp}) {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Simple validation - customize this as needed
-    if (username === 'admin' && password === 'password') {
-      setError('');
-      onLogin();
-    } else {
-      setError('Invalid username or password');
+
+
+  const handleSubmit = async (yo) => {
+    yo.preventDefault();
+    setError('');
+    setLoading(true);
+
+
+    try {
+      const res = await fetch('/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      })
+
+      const trakData = await res.json();
+
+      if (!res.ok) {
+        setError(trakData.message || 'Login Failed Please try again');
+      } else {
+        localStorage.setItem('EmailPending', email)
+        onGoToOtp();
+      }
+    } catch  {
+      setError('Network issues')
     }
-  };
+    
+  }
 
   return (
     <div className="login-container">
@@ -25,13 +44,13 @@ function Login({ onLogin }) {
         
         <div>
           <div className="input-group">
-            <label className="input-label">Username</label>
+            <label className="input-label">Email</label>
             <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="input-field"
-              placeholder="Enter username"
+              placeholder="Enter email"
             />
           </div>
 
@@ -50,17 +69,20 @@ function Login({ onLogin }) {
             <div className="error-message">{error}</div>
           )}
 
-          <button onClick={handleSubmit} className="login-button">
-            Login
+          <button 
+            onClick={handleSubmit} 
+            className="login-button"
+            disabled={loading}
+          >
+            {loading ? "Sending OTP..." : "Login"}
           </button>
         </div>
 
         <div className="demo-text">
-          Demo: username = "admin", password = "password"
+          Use your registered account to log in.
         </div>
       </div>
     </div>
   );
 }
-
 export default Login;
