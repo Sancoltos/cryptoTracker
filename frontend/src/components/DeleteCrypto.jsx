@@ -9,8 +9,12 @@ export default function DeleteCrypto({ onClose}) {
         e.preventDefault();
         setDisabled(true);
 
+         const token = localStorage.getItem("token");
+
         fetch(`http://localhost:3000/crypto/${name}`, {
             method: 'DELETE',
+            headers: {
+                "Authorization": `Bearer ${token}`}
         })
         .then(async (res) => {
             if (res.ok) {

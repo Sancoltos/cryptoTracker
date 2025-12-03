@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Header from "./components/Header";
 import TabNavigator from "./components/TabNavigator";
@@ -8,12 +8,21 @@ import Login from "./components/Login"
 import OtpStuff from './components/otp';
 
 
+
 function App() {
-const [isAuthenticated, setIsAuthenticated] = useState(false)
+const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return !!localStorage.getItem("token");
+  });
+
 const [showAdd, setShowAdd] = useState(false)
 const [showDelete, setShowDelete] = useState(false)
 const [showOtp, setShowOtp] = useState(false)
-const [role, setRole] = useState(null);
+
+const [role, setRole] = useState(() => {
+    return localStorage.getItem("role");
+  });
+
+
 
 const handleLoginSuccess = () => {
     setIsAuthenticated(true);
