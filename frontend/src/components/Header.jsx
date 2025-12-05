@@ -3,7 +3,7 @@ import "../css/Header.css"
 import AddCrypto from './AddCrypto';
 import DeleteCrypto from './DeleteCrypto';
 
-export default function CryptoHeader({ onAddClick, onDeleteClick }) {
+export default function CryptoHeader({ onAddClick, onDeleteClick, onSearch }) {
    
   return (
     
@@ -15,7 +15,7 @@ export default function CryptoHeader({ onAddClick, onDeleteClick }) {
 
       <div className="search">
         <Search />
-        <input type="text" placeholder="Search cryptocurrencies..." />
+        <input type="text" placeholder="Search cryptocurrencies..." onChange={(e) => onSearch(e.target.value)} />
       </div>
       <button className='addButton' onClick={onAddClick}>Add Crypto</button>
       <button className='deleteButton' onClick={onDeleteClick}>Delete Crypto</button>

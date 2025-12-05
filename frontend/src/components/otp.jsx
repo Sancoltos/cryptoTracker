@@ -37,16 +37,21 @@ const handleDaVerify = async () => {
 
 return(
     <div className="login-container">
-      <h2>Enter OTP</h2>
-      <p>We sent a code to {emailCarry}</p>
+      <div className="login-card">
+      <h2 className="otp-title">Enter OTP</h2>
+      <p className='emailNT'>We sent a code to {emailCarry}</p>
       <input
         type="text"
         value={otp}
         onChange={e => setOtp(e.target.value)}
+        className="otpinput-field"
         placeholder="6-digit code"
       />
       {error && <div className="error">{error}</div>}
-      <button onClick={handleDaVerify}>Verify OTP</button>
+      <div className='otp-container'>
+      <button className="otp-button" onClick={handleDaVerify}>Verify OTP</button>
+      </div>
+    </div>
     </div>
   );
 }

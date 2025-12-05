@@ -3,11 +3,19 @@ import { useState, useEffect } from "react";
 import CryptoCard from "./CryptoCard";
 import "../css/marketOverview.css";
 
-export default function MarketOverview() {
+export default function MarketOverview({ searchTerm}) {
 
   const [cryptos, setCryptos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const filtered = !searchTerm
+    ? cryptos
+    : cryptos.filter(c =>
+        c.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -27,6 +35,9 @@ export default function MarketOverview() {
       });
   }, []);
 
+
+
+
 if(loading) {
   return <p>Loading the stuff...</p>
 }
@@ -38,7 +49,7 @@ if (error) {
 
   return (
     <div className="market-overview">
-      {cryptos.map(dude => (
+      {filtered.map(dude => (
         <CryptoCard key={dude._id ?? dude.name} crypto={dude} />
       
         

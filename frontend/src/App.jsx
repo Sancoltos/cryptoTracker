@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Header from "./components/Header";
 import TabNavigator from "./components/TabNavigator";
@@ -6,6 +6,8 @@ import AddCrypto from "./components/AddCrypto";
 import DeleteCrypto from "./components/DeleteCrypto";
 import Login from "./components/Login"
 import OtpStuff from './components/otp';
+
+
 
 
 
@@ -17,6 +19,7 @@ const [isAuthenticated, setIsAuthenticated] = useState(() => {
 const [showAdd, setShowAdd] = useState(false)
 const [showDelete, setShowDelete] = useState(false)
 const [showOtp, setShowOtp] = useState(false)
+const [searchTerm, setSearchTerm] = useState('');
 
 const [role, setRole] = useState(() => {
     return localStorage.getItem("role");
@@ -57,11 +60,13 @@ const handleLoginSuccess = () => {
       <Header onAddClick={() => setShowAdd(true)} 
       onDeleteClick={() => setShowDelete(true)}
       onLogout={handleLogout}
-      role={role}  />
+      role={role} 
+        onSearch={setSearchTerm}
+ />
        <>
       {showAdd && <AddCrypto onClose={() => setShowAdd(false)} />}
       {showDelete && <DeleteCrypto onClose={() => setShowDelete(false)} />}
-      {!showAdd && !showDelete && <TabNavigator />}
+      {!showAdd && !showDelete && <TabNavigator searchTerm={searchTerm} />}
     </>
   </BrowserRouter>
 )
