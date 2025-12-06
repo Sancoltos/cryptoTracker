@@ -2,31 +2,509 @@
   {
     "id": 1,
     "crypto_name": "Bitcoin",
-    "date": "2025-10-14",
-    "open": 65432.50,
-    "high": 66120.75,
-    "low": 64890.20,
-    "close": 65780.30,
-    "volume": 28500000000
+    "date": "2025-12-04T00:00:00Z",
+    "open": 98500.32,
+    "high": 100240.88,
+    "low": 97210.45,
+    "close": 99810.22,
+    "Volume": 25600000000
   },
   {
     "id": 2,
-    "crypto_name": "Bitcoin",
-    "date": "2025-10-13",
-    "open": 64890.20,
-    "high": 65550.00,
-    "low": 64200.10,
-    "close": 65432.50,
-    "volume": 26800000000
+    "crypto_name": "Ethereum",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 5210.12,
+    "high": 5488.44,
+    "low": 5102.89,
+    "close": 5390.66,
+    "Volume": 11900000000
   },
   {
     "id": 3,
-    "crypto_name": "Ethereum",
-    "date": "2025-10-14",
-    "open": 3245.80,
-    "high": 3298.50,
-    "low": 3210.20,
-    "close": 3275.40,
-    "volume": 12500000000
+    "crypto_name": "Ripple",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.72,
+    "high": 0.77,
+    "low": 0.70,
+    "close": 0.75,
+    "Volume": 1800000000
+  },
+  {
+    "id": 4,
+    "crypto_name": "Tether",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 1.00,
+    "high": 1.01,
+    "low": 0.99,
+    "close": 1.00,
+    "Volume": 42000000000
+  },
+  {
+    "id": 5,
+    "crypto_name": "Binance Coin",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 642.55,
+    "high": 680.22,
+    "low": 629.12,
+    "close": 671.04,
+    "Volume": 920000000
+  },
+  {
+    "id": 6,
+    "crypto_name": "Solana",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 182.33,
+    "high": 195.12,
+    "low": 177.40,
+    "close": 192.66,
+    "Volume": 1800000000
+  },
+  {
+    "id": 7,
+    "crypto_name": "USD Coin",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 1.00,
+    "high": 1.00,
+    "low": 0.99,
+    "close": 1.00,
+    "Volume": 28000000000
+  },
+  {
+    "id": 8,
+    "crypto_name": "Dogecoin",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.16,
+    "high": 0.18,
+    "low": 0.15,
+    "close": 0.17,
+    "Volume": 2500000000
+  },
+  {
+    "id": 9,
+    "crypto_name": "Cardano",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.62,
+    "high": 0.67,
+    "low": 0.60,
+    "close": 0.65,
+    "Volume": 950000000
+  },
+  {
+    "id": 10,
+    "crypto_name": "TRON",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.13,
+    "high": 0.14,
+    "low": 0.12,
+    "close": 0.13,
+    "Volume": 1100000000
+  },
+
+  {
+    "id": 11,
+    "crypto_name": "Sui",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 1.39,
+    "high": 1.52,
+    "low": 1.33,
+    "close": 1.48,
+    "Volume": 420000000
+  },
+  {
+    "id": 12,
+    "crypto_name": "Wrapped Bitcoin",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 98520.45,
+    "high": 100200.12,
+    "low": 97300.21,
+    "close": 99850.99,
+    "Volume": 1300000000
+  },
+  {
+    "id": 13,
+    "crypto_name": "Chainlink",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 21.15,
+    "high": 23.40,
+    "low": 20.66,
+    "close": 22.87,
+    "Volume": 560000000
+  },
+  {
+    "id": 14,
+    "crypto_name": "Avalanche",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 36.44,
+    "high": 40.55,
+    "low": 35.10,
+    "close": 39.20,
+    "Volume": 840000000
+  },
+  {
+    "id": 15,
+    "crypto_name": "Stellar",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.14,
+    "high": 0.16,
+    "low": 0.13,
+    "close": 0.15,
+    "Volume": 400000000
+  },
+
+  {
+    "id": 16,
+    "crypto_name": "Shiba Inu",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.000009,
+    "high": 0.0000103,
+    "low": 0.0000087,
+    "close": 0.0000101,
+    "Volume": 25000000000
+  },
+  {
+    "id": 17,
+    "crypto_name": "Polygon",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.93,
+    "high": 1.01,
+    "low": 0.90,
+    "close": 0.99,
+    "Volume": 700000000
+  },
+  {
+    "id": 18,
+    "crypto_name": "Uniswap",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 6.55,
+    "high": 7.21,
+    "low": 6.22,
+    "close": 6.98,
+    "Volume": 320000000
+  },
+  {
+    "id": 19,
+    "crypto_name": "Internet Computer",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 14.20,
+    "high": 15.66,
+    "low": 13.90,
+    "close": 15.22,
+    "Volume": 310000000
+  },
+  {
+    "id": 20,
+    "crypto_name": "Litecoin",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 78.30,
+    "high": 83.88,
+    "low": 75.10,
+    "close": 82.15,
+    "Volume": 540000000
+  },
+
+  {
+    "id": 21,
+    "crypto_name": "Algorand",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.19,
+    "high": 0.22,
+    "low": 0.18,
+    "close": 0.21,
+    "Volume": 90000000
+  },
+  {
+    "id": 22,
+    "crypto_name": "Aave",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 112.33,
+    "high": 125.66,
+    "low": 109.10,
+    "close": 122.44,
+    "Volume": 260000000
+  },
+  {
+    "id": 23,
+    "crypto_name": "Cosmos",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 9.22,
+    "high": 10.33,
+    "low": 8.90,
+    "close": 10.01,
+    "Volume": 190000000
+  },
+  {
+    "id": 24,
+    "crypto_name": "Fantom",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.72,
+    "high": 0.79,
+    "low": 0.69,
+    "close": 0.77,
+    "Volume": 150000000
+  },
+  {
+    "id": 25,
+    "crypto_name": "Filecoin",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 4.66,
+    "high": 5.11,
+    "low": 4.50,
+    "close": 4.99,
+    "Volume": 220000000
+  },
+
+  {
+    "id": 26,
+    "crypto_name": "Tezos",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.82,
+    "high": 0.91,
+    "low": 0.79,
+    "close": 0.88,
+    "Volume": 110000000
+  },
+  {
+    "id": 27,
+    "crypto_name": "NEAR Protocol",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 3.44,
+    "high": 3.90,
+    "low": 3.33,
+    "close": 3.82,
+    "Volume": 330000000
+  },
+  {
+    "id": 28,
+    "crypto_name": "Monero",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 152.11,
+    "high": 168.55,
+    "low": 148.66,
+    "close": 165.44,
+    "Volume": 120000000
+  },
+  {
+    "id": 29,
+    "crypto_name": "Maker",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 1888.22,
+    "high": 2010.66,
+    "low": 1851.10,
+    "close": 1984.33,
+    "Volume": 95000000
+  },
+  {
+    "id": 30,
+    "crypto_name": "Theta",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 1.72,
+    "high": 1.92,
+    "low": 1.65,
+    "close": 1.88,
+    "Volume": 80000000
+  },
+
+  {
+    "id": 31,
+    "crypto_name": "VeChain",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.023,
+    "high": 0.026,
+    "low": 0.022,
+    "close": 0.025,
+    "Volume": 160000000
+  },
+  {
+    "id": 32,
+    "crypto_name": "Aptos",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 6.10,
+    "high": 6.55,
+    "low": 5.88,
+    "close": 6.41,
+    "Volume": 120000000
+  },
+  {
+    "id": 33,
+    "crypto_name": "Hedera",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.12,
+    "high": 0.14,
+    "low": 0.11,
+    "close": 0.13,
+    "Volume": 140000000
+  },
+  {
+    "id": 34,
+    "crypto_name": "Render",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 3.55,
+    "high": 3.88,
+    "low": 3.40,
+    "close": 3.79,
+    "Volume": 190000000
+  },
+  {
+    "id": 35,
+    "crypto_name": "Axie Infinity",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 7.44,
+    "high": 8.00,
+    "low": 7.22,
+    "close": 7.88,
+    "Volume": 90000000
+  },
+
+  {
+    "id": 36,
+    "crypto_name": "Dash",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 31.22,
+    "high": 34.55,
+    "low": 30.10,
+    "close": 33.44,
+    "Volume": 40000000
+  },
+  {
+    "id": 37,
+    "crypto_name": "Zcash",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 28.33,
+    "high": 30.55,
+    "low": 27.10,
+    "close": 29.99,
+    "Volume": 35000000
+  },
+  {
+    "id": 38,
+    "crypto_name": "Chiliz",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.079,
+    "high": 0.087,
+    "low": 0.075,
+    "close": 0.084,
+    "Volume": 95000000
+  },
+  {
+    "id": 39,
+    "crypto_name": "The Graph",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.21,
+    "high": 0.24,
+    "low": 0.20,
+    "close": 0.23,
+    "Volume": 110000000
+  },
+  {
+    "id": 40,
+    "crypto_name": "Toncoin",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 2.92,
+    "high": 3.22,
+    "low": 2.80,
+    "close": 3.12,
+    "Volume": 450000000
+  },
+
+  {
+    "id": 41,
+    "crypto_name": "Optimism",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 1.88,
+    "high": 2.11,
+    "low": 1.77,
+    "close": 2.05,
+    "Volume": 200000000
+  },
+  {
+    "id": 42,
+    "crypto_name": "PancakeSwap",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 3.05,
+    "high": 3.33,
+    "low": 2.95,
+    "close": 3.28,
+    "Volume": 120000000
+  },
+  {
+    "id": 43,
+    "crypto_name": "Compound",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 48.12,
+    "high": 53.22,
+    "low": 46.55,
+    "close": 52.10,
+    "Volume": 60000000
+  },
+  {
+    "id": 44,
+    "crypto_name": "Curve DAO Token",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 0.43,
+    "high": 0.48,
+    "low": 0.41,
+    "close": 0.47,
+    "Volume": 90000000
+  },
+  {
+    "id": 45,
+    "crypto_name": "Gnosis",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 324.10,
+    "high": 350.88,
+    "low": 315.90,
+    "close": 342.55,
+    "Volume": 40000000
+  },
+
+  {
+    "id": 46,
+    "crypto_name": "MakerDAO",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 1.00,
+    "high": 1.01,
+    "low": 0.99,
+    "close": 1.00,
+    "Volume": 7800000000
+  },
+  {
+    "id": 47,
+    "crypto_name": "Firo (formerly Zcoin)",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 3.22,
+    "high": 3.56,
+    "low": 3.12,
+    "close": 3.48,
+    "Volume": 18000000
+  },
+  {
+    "id": 48,
+    "crypto_name": "Kusama",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 22.33,
+    "high": 25.12,
+    "low": 21.04,
+    "close": 24.55,
+    "Volume": 30000000
+  },
+  {
+    "id": 49,
+    "crypto_name": "Quant",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 89.22,
+    "high": 98.55,
+    "low": 87.10,
+    "close": 96.33,
+    "Volume": 45000000
+  },
+  {
+    "id": 50,
+    "crypto_name": "Decred",
+    "date": "2025-12-04T00:00:00Z",
+    "open": 20.88,
+    "high": 22.66,
+    "low": 19.99,
+    "close": 22.12,
+    "Volume": 21000000
   }
 ]

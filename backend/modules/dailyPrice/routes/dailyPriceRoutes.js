@@ -6,29 +6,27 @@ const { validationCreateDaily, validationUpdateDaily, handleValidation } = requi
 
 
 
-router2.get('/', async (req, res, next) => {
   
+router2.get('/', async (req, res, next) => {
   try {
-      let search = req.query.search || "";
-
-      const count = await dailyPriceModel.PriceModeler.countDocuments({
-        crypto_name: search
-      })
-
-      if (!count || count <= 0) {
-        return res.send({ count: 0, page: 1, data: []})
-      }
-
-      const sort_by = req.query.sort_by || "date";
-    const sort_order = req.query.sort_order === "asc" ? 1 : -1;
-
+    const search = req.query.search || "";
     
+   
+    const searchFilter = search ? { crypto_name: new RegExp(search, 'i') } : {};
+
+    const count = await dailyPriceModel.PriceModeler.countDocuments(searchFilter);
+
+    if (!count || count <= 0) {
+      return res.send({ count: 0, page: 1, data: [] });
+    }
+
+    const sort_by = req.query.sort_by || "date";
+    const sort_order = req.query.sort_order === "asc" ? 1 : -1;
     const limit = parseInt(req.query.limit) || 10;
     const page = parseInt(req.query.page) || 1;
 
-    
-    const getDemPrices = await dailyPriceModel.DailyModel.find(
-      { crypto_name: search },
+    const getDemPrices = await dailyPriceModel.PriceModeler.find(
+      searchFilter,  
       {},
       {
         limit,

@@ -6,7 +6,8 @@ const CryptoSchema = new mongoose.Schema({
   name: {type: String, required:true},
   symbol: {type: String, required:true},
   rank: Number,
-  is_active: Boolean
+  is_active: Boolean,
+  added_by: String  
 })
 
 

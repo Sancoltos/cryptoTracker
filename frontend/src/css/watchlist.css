@@ -1,0 +1,133 @@
+.watchlist-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 16px 0;
+  color: #ffffff;
+}
+
+.watchlist-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.watchlist-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.watchlist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.watchlist-card {
+  background-color: #270f2a;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+.watchlist-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.watchlist-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.watchlist-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.watchlist-symbol {
+  margin: 4px 0 0 0;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.watchlist-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.price-value {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.price-change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+.price-change.positive {
+  color: #10b981;
+}
+
+.price-change.negative {
+  color: #ef4444;
+}
+
+.watchlist-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 16px;
+}
+
+.view-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 4px 8px;
+  transition: opacity 0.2s;
+}
+
+.view-button:hover {
+  opacity: 0.7;
+}
+
+.remove-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.remove-button:hover {
+  opacity: 0.7;
+}
+
+.empty-watchlist {
+  text-align: center;
+  color: #9ca3af;
+  padding: 40px 20px;
+  font-size: 1.1rem;
+}
+

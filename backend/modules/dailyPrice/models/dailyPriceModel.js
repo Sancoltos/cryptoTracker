@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const DailySchema = new mongoose.Schema({
   id:Number,
   crypto_name: {type: String, required:true},
+  symbol: String,
   date: Date,
   open: Number,
   high: Number,

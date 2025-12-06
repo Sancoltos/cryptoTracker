@@ -5,7 +5,7 @@ import Watchlist from "../components/Watchlist";
 import "../css/TabNav.css"
 
 
-export default function TabNavigator({searchTerm}) {
+export default function TabNavigator({searchTerm, userEmail, userRole}) {
     const [page, setPage] = useState("Market Overview")
 
 
@@ -17,10 +17,11 @@ export default function TabNavigator({searchTerm}) {
                 <button className='button3' onClick={() => setPage("Watchlist")}>Watchlist</button>
             </div>
 
-        {/* These are the pages for the tab nav and will load them below  */}
+    
+
         <div  className = "pages"> 
-        {page === "Market Overview" && <MarketOverview searchTerm={searchTerm} />}
-        {page === "Price History" && <PriceHistory/>}
+        {page === "Market Overview" && <MarketOverview searchTerm={searchTerm} userEmail={userEmail} userRole={userRole} />}
+        {page === "Price History" && <PriceHistory searchTerm={searchTerm}/>}
         {page === "Watchlist" && <Watchlist/>}
        </div>
         </div>

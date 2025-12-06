@@ -11,10 +11,9 @@ router3.get('/', async (req, res, next) => {
   try {
     let search = req.query.search || "";
 
+    const searchFilter = search ? { crypto_name: search } : {};
    
-    const count = await watchlistModel.WatchModeler.countDocuments({
-      crypto_name: search
-    });
+    const count = await watchlistModel.WatchModeler.countDocuments(searchFilter);
 
     if (!count || count <= 0) {
       return res.send({ count: 0, page: 1, data: [] });
@@ -29,7 +28,7 @@ router3.get('/', async (req, res, next) => {
     
 
     const watchlist = await watchlistModel.WatchModeler.find(
-      { crypto_name: search },
+      searchFilter,
       {},
       {
         limit,

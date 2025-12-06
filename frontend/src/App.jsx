@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Header from "./components/Header";
 import TabNavigator from "./components/TabNavigator";
 import AddCrypto from "./components/AddCrypto";
-import DeleteCrypto from "./components/DeleteCrypto";
 import Login from "./components/Login"
 import OtpStuff from './components/otp';
 
@@ -17,12 +16,25 @@ const [isAuthenticated, setIsAuthenticated] = useState(() => {
   });
 
 const [showAdd, setShowAdd] = useState(false)
-const [showDelete, setShowDelete] = useState(false)
 const [showOtp, setShowOtp] = useState(false)
 const [searchTerm, setSearchTerm] = useState('');
 
 const [role, setRole] = useState(() => {
     return localStorage.getItem("role");
+  });
+
+const [userEmail, setUserEmail] = useState(() => {
+    // Decode JWT to get email
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        return payload.email || null;
+      } catch (e) {
+        return null;
+      }
+    }
+    return null;
   });
 
 
@@ -31,6 +43,16 @@ const handleLoginSuccess = () => {
     setIsAuthenticated(true);
     setShowOtp(false)
     setRole(localStorage.getItem('role'));
+    // Decode JWT to get email
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        setUserEmail(payload.email || null);
+      } catch (e) {
+        setUserEmail(null);
+      }
+    }
   };
 
   const handleGoToOtp = () => {
@@ -40,10 +62,10 @@ const handleLoginSuccess = () => {
   const handleLogout = () => {
     setIsAuthenticated(false);
     setShowAdd(false);
-    setShowDelete(false);
     setShowOtp(false);
     localStorage.removeItem('token');
-     localStorage.removeItem('role');
+    localStorage.removeItem('role');
+    setUserEmail(null);
   };
 
   if (!isAuthenticated) {
@@ -58,15 +80,13 @@ const handleLoginSuccess = () => {
   return (
   <BrowserRouter>
       <Header onAddClick={() => setShowAdd(true)} 
-      onDeleteClick={() => setShowDelete(true)}
       onLogout={handleLogout}
       role={role} 
         onSearch={setSearchTerm}
  />
        <>
       {showAdd && <AddCrypto onClose={() => setShowAdd(false)} />}
-      {showDelete && <DeleteCrypto onClose={() => setShowDelete(false)} />}
-      {!showAdd && !showDelete && <TabNavigator searchTerm={searchTerm} />}
+      {!showAdd && <TabNavigator searchTerm={searchTerm} userEmail={userEmail} userRole={role} />}
     </>
   </BrowserRouter>
 )

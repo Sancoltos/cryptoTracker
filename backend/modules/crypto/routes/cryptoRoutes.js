@@ -94,7 +94,9 @@ bbRouter.get('/:name', async (req, res, next) => {
 
 bbRouter.post('/', validationCreateCryptek, adamsErrorHandler, async (req, res, next) => {
   try {
-    const newCrypto = await cryptoModel.addACrypto(req.body);
+
+    const cryptoData = { ...req.body, added_by: req.user.email };
+    const newCrypto = await cryptoModel.addACrypto(cryptoData);
     res.status(201).json(newCrypto);
 
   } catch (error) {
@@ -123,13 +125,31 @@ bbRouter.put('/:name', requireRole(['admin']), validationUpdateCryptek, adamsErr
 
 bbRouter.delete('/:name', async (req, res, next) => {
   try {
+
+    const crypto = await cryptoModel.getCryptoByName(req.params.name);
+    if (!crypto) {
+      return res.status(404).json({ message: 'Cryptocurrency not found' });
+    }
+  
+    const isAdmin = req.user.role === 'admin';
+    const normalizeEmail = (email) => email ? email.trim().toLowerCase() : '';
+    const isOwner = normalizeEmail(crypto.added_by) === normalizeEmail(req.user.email);
+
+    if (!isAdmin && !isOwner) {
+      return res.status(403).json({ message: 'You can only delete cryptos that you added' });
+    }
+
+
     const deleted = await cryptoModel.deleteCrypto(req.params.name);
     if (!deleted) {
+
       return res.status(404).json({ message: 'Cryptocurrency not found' });
-      }
+    }
     res.status(200).json(deleted);
 
-  } catch (error) {
+
+  } catch (error) 
+{
     next(error);
   }
 }
