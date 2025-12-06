@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const CTUser = require('../models/userModel');
 const JWT_SECRET = process.env.JWT_SECRET;
-const sendEmail = require('../../shared/send-utils');
+const sendEmail = require('../controller/send-utils')
 
 
 
