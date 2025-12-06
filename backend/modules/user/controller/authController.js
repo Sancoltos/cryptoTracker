@@ -1,14 +1,10 @@
 const jwt = require('jsonwebtoken');
-const nodemailer = require('nodemailer');
 const CTUser = require('../models/userModel');
 const JWT_SECRET = process.env.JWT_SECRET;
+const sendEmail = require('../../shared/send-utils');
 
 
 
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS}
-})
 
 
 async function login(req, res, next) {
@@ -29,13 +25,11 @@ async function login(req, res, next) {
         await user.save();
 
 
-        await transporter.sendMail({
-            from: process.env.EMAIL_USER,
-            to: user.email,
-            subject: "CryptoTrak OTP",
-            text: `Your OTP code is ${otp}\n Do not share this code with anyone`
-
-        })
+        await sendEmail(
+          user.email,
+              "CryptoTrak OTP",
+              `Your OTP code is <b>${otp}</b><br><br>Do not share this code with anyone.`
+      );
 
         res.json ({ message: 'otp sent'});
 
