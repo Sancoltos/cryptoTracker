@@ -6,6 +6,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const PORT = 3000;
+const hostname = "0.0.0.0";
 const cryptoRoutes = require('./modules/crypto/routes/cryptoRoutes');
 const dailyPriceRoutes = require('./modules/dailyPrice/routes/dailyPriceRoutes');
 const watchlistRoutes = require('./modules/watchlist/routes/watchlistRoutes');
@@ -38,5 +39,5 @@ app.use((err, req, res, next) => {
 
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://${hostname}:${PORT}`);
 });
