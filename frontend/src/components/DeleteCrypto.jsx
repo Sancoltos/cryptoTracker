@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import '../css/deleteCrypto.css'
+const API = import.meta.env.VITE_API_URL;
 
 export default function DeleteCrypto({ onClose}) {
     const [name, setName] = useState('');
@@ -11,7 +12,7 @@ export default function DeleteCrypto({ onClose}) {
 
          const token = localStorage.getItem("token");
 
-        fetch(`http://localhost:3000/crypto/${name}`, {
+        fetch(`${API}/crypto/${name}`, {
             method: 'DELETE',
             headers: {
                 "Authorization": `Bearer ${token}`}

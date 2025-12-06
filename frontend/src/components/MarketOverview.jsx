@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import CryptoCard from "./CryptoCard";
 import "../css/marketOverview.css";
 
+const API = import.meta.env.VITE_API_URL;
+
 export default function MarketOverview({ searchTerm, userEmail, userRole}) {
 
   const [cryptos, setCryptos] = useState([]);
@@ -18,7 +20,7 @@ export default function MarketOverview({ searchTerm, userEmail, userRole}) {
 
   const fetchWatchlist = () => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:3000/watchlist?limit=100&page=1', {
+    fetch(`${API}/watchlist?limit=100&page=1`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -35,7 +37,7 @@ export default function MarketOverview({ searchTerm, userEmail, userRole}) {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:3000/crypto?limit=50&page=1' ,{
+    fetch(`${API}/crypto?limit=50&page=1` ,{
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -60,7 +62,7 @@ export default function MarketOverview({ searchTerm, userEmail, userRole}) {
     try {
       if (isCurrentlyInWatchlist) {
         // Remove from watchlist
-        await fetch(`http://localhost:3000/watchlist/${encodeURIComponent(cryptoName)}`, {
+        await fetch(`${API}/watchlist/${encodeURIComponent(cryptoName)}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -73,7 +75,7 @@ export default function MarketOverview({ searchTerm, userEmail, userRole}) {
         });
       } else {
         // Add to watchlist
-        await fetch('http://localhost:3000/watchlist', {
+        await fetch(`${API}/watchlist`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -91,7 +93,7 @@ export default function MarketOverview({ searchTerm, userEmail, userRole}) {
   const handleDelete = async (cryptoName) => {
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch(`http://localhost:3000/crypto/${encodeURIComponent(cryptoName)}`, {
+      const res = await fetch(`${API}/crypto/${encodeURIComponent(cryptoName)}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

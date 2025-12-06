@@ -1,5 +1,5 @@
 import { useState} from 'react';
-
+const API = import.meta.env.VITE_API_URL;
 
 function OtpStuff({ onLoginGood}) {
 const [otp, setOtp] = useState('');
@@ -14,7 +14,7 @@ const handleDaVerify = async () => {
     setError('');
 
     try {
-        const res = await fetch('/auth/verify-otp', {
+        const res = await fetch(`${API}/auth/verify-otp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: emailCarry, otp })   

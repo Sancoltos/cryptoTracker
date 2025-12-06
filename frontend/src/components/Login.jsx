@@ -1,5 +1,7 @@
 import { useState} from 'react'
 import '../css/Login.css';
+const API = import.meta.env.VITE_API_URL;
+
 
 
 function Login({onGoToOtp}) {
@@ -17,7 +19,7 @@ function Login({onGoToOtp}) {
 
 
     try {
-      const res = await fetch('/auth/login', {
+      const res = await fetch(`${API}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })

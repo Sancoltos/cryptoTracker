@@ -1,6 +1,6 @@
 import '../css/addCrypto.css';
 import { useState } from 'react';
-
+const API = import.meta.env.VITE_API_URL;
 
 
 
@@ -13,13 +13,14 @@ export default function AddCrypto({ onClose}) {
   const [is_active, setIsActive] = useState(false);
   const [disabled, setDisabled] = useState(false);
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setDisabled(true);
     const newCrypto = { name, symbol, rank, is_active };
 
 const token = localStorage.getItem('token');
-    fetch('http://localhost:3000/crypto', {
+    fetch(`${API}/crypto`, {
       method: 'POST',
       headers:{ "Content-Type" : "application/json", "Authorization": `Bearer ${token}` },
       body: JSON.stringify(newCrypto)

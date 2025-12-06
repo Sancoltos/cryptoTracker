@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Star, TrendingUp, X } from "lucide-react";
 import "../css/watchlist.css";
+const API = import.meta.env.VITE_API_URL;
+
 
 export default function Watchlist() {
   const [coolWatch, setcoolWatch] = useState([]);
@@ -12,7 +14,7 @@ export default function Watchlist() {
   useEffect(() => {
     const token = localStorage.getItem('token');
  
-    fetch('http://localhost:3000/watchlist?limit=100&page=1', {
+    fetch(`${API}/watchlist?limit=100&page=1`, {
 
       headers: {
         'Authorization': `Bearer ${token}`

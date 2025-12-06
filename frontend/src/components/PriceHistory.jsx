@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import CryptoList from "./CryptoList"
 import "../css/cryptoList.css"
 import { Search } from "lucide-react";
-
+const API = import.meta.env.VITE_API_URL;
 
 
 export default function PriceHistory({searchTerm}) {
@@ -22,7 +22,7 @@ const listFiltered = !searchTerm
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:3000/prices?limit=50&page=1', {
+    fetch(`${API}/prices?limit=50&page=1`, {
       headers: {
         'Authorization' : `Bearer ${token}`
       }
