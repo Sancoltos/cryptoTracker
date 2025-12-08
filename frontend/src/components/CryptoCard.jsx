@@ -41,7 +41,10 @@ const CryptoCard = ({ crypto, isInWatchlist, onToggleWatchlist, onDelete, userEm
       >
         <Star size={20} fill={isInWatchlist ? '#fbbf24' : 'none'} color={isInWatchlist ? '#fbbf24' : '#ffffff'} />
       </button>
-      <img src={`/assets/${crypto.symbol}.png`} alt={crypto.name} className="crypto-logo" />
+      <img src={`/assets/${crypto.symbol}.png`} alt={crypto.name} className="crypto-logo" 
+      onError={(e) => {
+    e.currentTarget.src = "../assets/default.png";
+  }}/>
 
       <div className="crypto-info">
         <h3>{crypto.name}</h3>
