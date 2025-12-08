@@ -27,7 +27,7 @@ export default function Watchlist() {
         setLoading(false);
         
  
-        fetch(`http://localhost:3000/crypto?limit=100&page=1`, {
+        fetch(`${API}/crypto?limit=100&page=1`, {
           
           headers: {
             'Authorization': `Bearer ${token}`
@@ -46,7 +46,7 @@ export default function Watchlist() {
               .catch(err => console.error('Failed to fetch crypto data:', err));
 
         const priceAddded = data.data.map(item =>
-          fetch(`http://localhost:3000/prices/${encodeURIComponent(item.crypto_name)}/daily`, {
+          fetch(`${API}/prices/${encodeURIComponent(item.crypto_name)}/daily`, {
 
             headers: {
               'Authorization': `Bearer ${token}`
@@ -87,7 +87,7 @@ export default function Watchlist() {
     
   try {
 
-      await fetch(`http://localhost:3000/watchlist/${encodeURIComponent(cryptoName)}`, {
+      await fetch(`${API}/watchlist/${encodeURIComponent(cryptoName)}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
